@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "OJQMainViewController.h"
+#import "SimpleMainView.h"
+#import "WindowMainView.h"
 
 @interface AppDelegate ()
 
@@ -19,8 +21,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    OJQMainViewController *mainVC = [[OJQMainViewController alloc] init];
-    self.window.rootViewController = mainVC;
+    
+    OJQMainViewController *firstVC = [[OJQMainViewController alloc] init];
+    [firstVC setView:[[SimpleMainView alloc] initWithFrame:[UIScreen mainScreen].bounds]];
+    [[firstVC tabBarItem] setTitle:@"first"];
+    [[firstVC tabBarItem] setImage:[UIImage imageNamed:@"github.png"]];
+    
+    
+    OJQMainViewController *secondVC = [[OJQMainViewController alloc] init];
+    [secondVC setView:[[WindowMainView alloc] initWithFrame:[UIScreen mainScreen].bounds]];
+    [[secondVC tabBarItem] setTitle:@"second"];
+    [[secondVC tabBarItem] setImage:[UIImage imageNamed:@"dribbble.png"]];
+    
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[firstVC, secondVC];
+    
+    self.window.rootViewController = tabBarController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyWindow];
     return YES;

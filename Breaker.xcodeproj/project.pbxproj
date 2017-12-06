@@ -13,8 +13,10 @@
 		BEC156051FD7667500FE37FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEC156041FD7667500FE37FE /* Assets.xcassets */; };
 		BEC156081FD7667500FE37FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC156061FD7667500FE37FE /* LaunchScreen.storyboard */; };
 		BEC156171FD76B3700FE37FE /* OJQMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC156151FD76B3700FE37FE /* OJQMainViewController.m */; };
-		BEC156181FD76B3700FE37FE /* OJQMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC156161FD76B3700FE37FE /* OJQMainViewController.xib */; };
-		BEC1561B1FD76B6F00FE37FE /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC1561A1FD76B6F00FE37FE /* TestViewController.m */; };
+		BEC156281FD85ED100FE37FE /* SimpleMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC156271FD85ED100FE37FE /* SimpleMainView.m */; };
+		BEC1562C1FD85F6500FE37FE /* SimpleFullScreenOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC1562B1FD85F6500FE37FE /* SimpleFullScreenOverView.m */; };
+		BEC1562F1FD88E0100FE37FE /* WindowFullScreenOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC1562E1FD88E0100FE37FE /* WindowFullScreenOverView.m */; };
+		BEC156321FD8903D00FE37FE /* WindowMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC156311FD8903D00FE37FE /* WindowMainView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +30,14 @@
 		BEC156091FD7667500FE37FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEC156141FD76B3700FE37FE /* OJQMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OJQMainViewController.h; sourceTree = "<group>"; };
 		BEC156151FD76B3700FE37FE /* OJQMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OJQMainViewController.m; sourceTree = "<group>"; };
-		BEC156161FD76B3700FE37FE /* OJQMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OJQMainViewController.xib; sourceTree = "<group>"; };
-		BEC156191FD76B6F00FE37FE /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		BEC1561A1FD76B6F00FE37FE /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		BEC156261FD85ED100FE37FE /* SimpleMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleMainView.h; path = views/SimpleMainView.h; sourceTree = "<group>"; };
+		BEC156271FD85ED100FE37FE /* SimpleMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleMainView.m; path = views/SimpleMainView.m; sourceTree = "<group>"; };
+		BEC1562A1FD85F6500FE37FE /* SimpleFullScreenOverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleFullScreenOverView.h; path = views/SimpleFullScreenOverView.h; sourceTree = "<group>"; };
+		BEC1562B1FD85F6500FE37FE /* SimpleFullScreenOverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleFullScreenOverView.m; path = views/SimpleFullScreenOverView.m; sourceTree = "<group>"; };
+		BEC1562D1FD88E0100FE37FE /* WindowFullScreenOverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowFullScreenOverView.h; path = views/WindowFullScreenOverView.h; sourceTree = "<group>"; };
+		BEC1562E1FD88E0100FE37FE /* WindowFullScreenOverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowFullScreenOverView.m; path = views/WindowFullScreenOverView.m; sourceTree = "<group>"; };
+		BEC156301FD8903D00FE37FE /* WindowMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowMainView.h; path = views/WindowMainView.h; sourceTree = "<group>"; };
+		BEC156311FD8903D00FE37FE /* WindowMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowMainView.m; path = views/WindowMainView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,16 +70,14 @@
 		BEC155F71FD7667500FE37FE /* Breaker */ = {
 			isa = PBXGroup;
 			children = (
+				BEC156291FD85EFE00FE37FE /* views */,
 				BEC155FB1FD7667500FE37FE /* AppDelegate.h */,
 				BEC155FC1FD7667500FE37FE /* AppDelegate.m */,
 				BEC156011FD7667500FE37FE /* Main.storyboard */,
 				BEC156041FD7667500FE37FE /* Assets.xcassets */,
 				BEC156061FD7667500FE37FE /* LaunchScreen.storyboard */,
 				BEC156141FD76B3700FE37FE /* OJQMainViewController.h */,
-				BEC156191FD76B6F00FE37FE /* TestViewController.h */,
-				BEC1561A1FD76B6F00FE37FE /* TestViewController.m */,
 				BEC156151FD76B3700FE37FE /* OJQMainViewController.m */,
-				BEC156161FD76B3700FE37FE /* OJQMainViewController.xib */,
 				BEC156091FD7667500FE37FE /* Info.plist */,
 				BEC155F81FD7667500FE37FE /* Supporting Files */,
 			);
@@ -85,6 +90,21 @@
 				BEC155F91FD7667500FE37FE /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEC156291FD85EFE00FE37FE /* views */ = {
+			isa = PBXGroup;
+			children = (
+				BEC156261FD85ED100FE37FE /* SimpleMainView.h */,
+				BEC156271FD85ED100FE37FE /* SimpleMainView.m */,
+				BEC156301FD8903D00FE37FE /* WindowMainView.h */,
+				BEC156311FD8903D00FE37FE /* WindowMainView.m */,
+				BEC1562A1FD85F6500FE37FE /* SimpleFullScreenOverView.h */,
+				BEC1562B1FD85F6500FE37FE /* SimpleFullScreenOverView.m */,
+				BEC1562D1FD88E0100FE37FE /* WindowFullScreenOverView.h */,
+				BEC1562E1FD88E0100FE37FE /* WindowFullScreenOverView.m */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +166,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC156181FD76B3700FE37FE /* OJQMainViewController.xib in Resources */,
 				BEC156081FD7667500FE37FE /* LaunchScreen.storyboard in Resources */,
 				BEC156051FD7667500FE37FE /* Assets.xcassets in Resources */,
 				BEC156031FD7667500FE37FE /* Main.storyboard in Resources */,
@@ -161,8 +180,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEC156171FD76B3700FE37FE /* OJQMainViewController.m in Sources */,
+				BEC1562F1FD88E0100FE37FE /* WindowFullScreenOverView.m in Sources */,
+				BEC156321FD8903D00FE37FE /* WindowMainView.m in Sources */,
+				BEC1562C1FD85F6500FE37FE /* SimpleFullScreenOverView.m in Sources */,
+				BEC156281FD85ED100FE37FE /* SimpleMainView.m in Sources */,
 				BEC155FD1FD7667500FE37FE /* AppDelegate.m in Sources */,
-				BEC1561B1FD76B6F00FE37FE /* TestViewController.m in Sources */,
 				BEC155FA1FD7667500FE37FE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

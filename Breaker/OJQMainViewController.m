@@ -7,6 +7,7 @@
 //
 
 #import "OJQMainViewController.h"
+#import "SimpleMainView.h"
 
 @interface OJQMainViewController ()
 
@@ -19,8 +20,11 @@
     return self;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.view = [[SimpleMainView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
     // Do any additional setup after loading the view from its nib.
 }
 

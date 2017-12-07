@@ -10,6 +10,7 @@
 #import "OJQMainViewController.h"
 #import "SimpleMainView.h"
 #import "WindowMainView.h"
+#import "DerivedMainView.h"
 
 @interface AppDelegate ()
 
@@ -33,9 +34,14 @@
     [[secondVC tabBarItem] setTitle:@"second"];
     [[secondVC tabBarItem] setImage:[UIImage imageNamed:@"dribbble.png"]];
     
+    OJQMainViewController *thirdVC = [[OJQMainViewController alloc] init];
+    [thirdVC setView:[[DerivedMainView alloc] initWithFrame:[UIScreen mainScreen].bounds]];
+    [[thirdVC tabBarItem] setTitle:@"third"];
+    [[thirdVC tabBarItem] setImage:[UIImage imageNamed:@"evernote.png"]];
+    
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[firstVC, secondVC];
+    tabBarController.viewControllers = @[firstVC, secondVC, thirdVC];
     
     self.window.rootViewController = tabBarController;
     self.window.backgroundColor = [UIColor whiteColor];

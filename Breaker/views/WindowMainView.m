@@ -23,15 +23,15 @@
     if (self) {
         
         UITextField *myTextInput = [[UITextField alloc] init];
-        myTextInput.frame = CGRectMake(150, 50, 100, 30);
+        myTextInput.frame = CGRectMake(125, 50, 150, 30);
         
         myTextInput.backgroundColor = [UIColor whiteColor];
         myTextInput.borderStyle = UITextBorderStyleRoundedRect;
         myTextInput.placeholder = @"弹起键盘";
         myTextInput.clearButtonMode = UITextFieldViewModeWhileEditing;
         
-        UIButton *myBtn = [[UIButton alloc] initWithFrame:CGRectMake(150, 150, 100, 30)];
-        [myBtn setTitle:@"弹出框win" forState:UIControlStateNormal];
+        UIButton *myBtn = [[UIButton alloc] initWithFrame:CGRectMake(125, 150, 150, 30)];
+        [myBtn setTitle:@"弹出框窗口" forState:UIControlStateNormal];
         //        [myBtn setTitle:@"已经弹出" forState:UIControlStateHighlighted];
         [myBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         //        [myBtn setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
@@ -104,9 +104,9 @@
                                                       }]];
     
     // 5、模态切换显示弹出框
-    [self presentViewController:alertController
-                       animated:YES
-                     completion:nil];
+//    [self.view presentViewController:alertController
+//                       animated:YES
+//                     completion:nil];
 }
 
 - (void)drawRect:(CGRect)rect {

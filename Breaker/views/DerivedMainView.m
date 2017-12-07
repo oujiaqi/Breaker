@@ -1,28 +1,23 @@
 //
-//  SimpleMainView.m
+//  DerivedMainView.m
 //  Breaker
 //
-//  Created by ouou on 2017/12/7.
+//  Created by colinou on 2017/12/7.
 //  Copyright © 2017年 oujiaqi. All rights reserved.
 //
 
-#import "SimpleMainView.h"
-#import "SimpleFullScreenOverView.h"
+#import "DerivedMainView.h"
+#import "DerivedFullScreenOverView.h"
 
-
-@interface SimpleMainView ()
-
+@interface DerivedMainView() <SourceFullScreenOverViewDelegate>
 @end
 
-@implementation SimpleMainView
+@implementation DerivedMainView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)packUpAllPopUpView:(id)sender {
+//    [super packUpAllPopUpView:self];
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
 }
-*/
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -37,10 +32,10 @@
         myTextInput.clearButtonMode = UITextFieldViewModeWhileEditing;
         
         UIButton *myBtn = [[UIButton alloc] initWithFrame:CGRectMake(125, 150, 150, 30)];
-        [myBtn setTitle:@"弹出框无处理" forState:UIControlStateNormal];
-//        [myBtn setTitle:@"已经弹出" forState:UIControlStateHighlighted];
+        [myBtn setTitle:@"弹出框委托" forState:UIControlStateNormal];
+        //        [myBtn setTitle:@"已经弹出" forState:UIControlStateHighlighted];
         [myBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        [myBtn setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
+        //        [myBtn setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
         [myBtn setBackgroundColor:[UIColor grayColor]];
         [myBtn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
         
@@ -57,16 +52,17 @@
 
 - (void)show {
     CGRect screenRect = [UIScreen mainScreen].bounds;
-    SimpleFullScreenOverView *sov = [[SimpleFullScreenOverView alloc] initWithFrame:screenRect];
-//    [self addSubview:sov];
+    DerivedFullScreenOverView *dov = [[DerivedFullScreenOverView alloc] initWithFrame:screenRect];
+    dov.sourceFullScreenOverViewDelegate = self;
+    //    [self addSubview:sov];
     CABasicAnimation *anima = [CABasicAnimation animation];
     anima.keyPath = @"position";
     anima.fromValue=[NSValue valueWithCGPoint:CGPointMake(screenRect.size.width/2, 0)];
     anima.toValue=[NSValue valueWithCGPoint:CGPointMake(screenRect.size.width/2, screenRect.size.height/2)];
     anima.removedOnCompletion=NO;
     anima.fillMode=kCAFillModeForwards;
-    [sov.layer addAnimation:anima forKey:nil];
-    [[[UIApplication sharedApplication] keyWindow] addSubview:sov];
+    [dov.layer addAnimation:anima forKey:nil];
+    [[[UIApplication sharedApplication] keyWindow] addSubview:dov];
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -76,5 +72,6 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
 }
+
 
 @end

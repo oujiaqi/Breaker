@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22AEF3A51FD8CD6300BB40C5 /* SourceMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AEF3A41FD8CD6300BB40C5 /* SourceMainView.m */; };
+		22AEF3A81FD8CD7F00BB40C5 /* SourceFullScreenOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AEF3A71FD8CD7F00BB40C5 /* SourceFullScreenOverView.m */; };
+		22AEF3AB1FD8D14A00BB40C5 /* DerivedMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AEF3AA1FD8D14A00BB40C5 /* DerivedMainView.m */; };
+		22AEF3AE1FD8D16600BB40C5 /* DerivedFullScreenOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AEF3AD1FD8D16600BB40C5 /* DerivedFullScreenOverView.m */; };
 		BEC155FA1FD7667500FE37FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC155F91FD7667500FE37FE /* main.m */; };
 		BEC155FD1FD7667500FE37FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC155FC1FD7667500FE37FE /* AppDelegate.m */; };
 		BEC156031FD7667500FE37FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC156011FD7667500FE37FE /* Main.storyboard */; };
@@ -20,6 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22AEF3A31FD8CD6300BB40C5 /* SourceMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SourceMainView.h; path = views/SourceMainView.h; sourceTree = "<group>"; };
+		22AEF3A41FD8CD6300BB40C5 /* SourceMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SourceMainView.m; path = views/SourceMainView.m; sourceTree = "<group>"; };
+		22AEF3A61FD8CD7F00BB40C5 /* SourceFullScreenOverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SourceFullScreenOverView.h; path = views/SourceFullScreenOverView.h; sourceTree = "<group>"; };
+		22AEF3A71FD8CD7F00BB40C5 /* SourceFullScreenOverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SourceFullScreenOverView.m; path = views/SourceFullScreenOverView.m; sourceTree = "<group>"; };
+		22AEF3A91FD8D14A00BB40C5 /* DerivedMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DerivedMainView.h; path = views/DerivedMainView.h; sourceTree = "<group>"; };
+		22AEF3AA1FD8D14A00BB40C5 /* DerivedMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DerivedMainView.m; path = views/DerivedMainView.m; sourceTree = "<group>"; };
+		22AEF3AC1FD8D16600BB40C5 /* DerivedFullScreenOverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DerivedFullScreenOverView.h; path = views/DerivedFullScreenOverView.h; sourceTree = "<group>"; };
+		22AEF3AD1FD8D16600BB40C5 /* DerivedFullScreenOverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DerivedFullScreenOverView.m; path = views/DerivedFullScreenOverView.m; sourceTree = "<group>"; };
 		BEC155F51FD7667500FE37FE /* Breaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC155F91FD7667500FE37FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BEC155FB1FD7667500FE37FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +115,14 @@
 				BEC1562B1FD85F6500FE37FE /* SimpleFullScreenOverView.m */,
 				BEC1562D1FD88E0100FE37FE /* WindowFullScreenOverView.h */,
 				BEC1562E1FD88E0100FE37FE /* WindowFullScreenOverView.m */,
+				22AEF3A31FD8CD6300BB40C5 /* SourceMainView.h */,
+				22AEF3A41FD8CD6300BB40C5 /* SourceMainView.m */,
+				22AEF3A61FD8CD7F00BB40C5 /* SourceFullScreenOverView.h */,
+				22AEF3A71FD8CD7F00BB40C5 /* SourceFullScreenOverView.m */,
+				22AEF3A91FD8D14A00BB40C5 /* DerivedMainView.h */,
+				22AEF3AA1FD8D14A00BB40C5 /* DerivedMainView.m */,
+				22AEF3AC1FD8D16600BB40C5 /* DerivedFullScreenOverView.h */,
+				22AEF3AD1FD8D16600BB40C5 /* DerivedFullScreenOverView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -180,10 +200,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEC156171FD76B3700FE37FE /* OJQMainViewController.m in Sources */,
+				22AEF3AE1FD8D16600BB40C5 /* DerivedFullScreenOverView.m in Sources */,
 				BEC1562F1FD88E0100FE37FE /* WindowFullScreenOverView.m in Sources */,
 				BEC156321FD8903D00FE37FE /* WindowMainView.m in Sources */,
 				BEC1562C1FD85F6500FE37FE /* SimpleFullScreenOverView.m in Sources */,
+				22AEF3A51FD8CD6300BB40C5 /* SourceMainView.m in Sources */,
+				22AEF3AB1FD8D14A00BB40C5 /* DerivedMainView.m in Sources */,
 				BEC156281FD85ED100FE37FE /* SimpleMainView.m in Sources */,
+				22AEF3A81FD8CD7F00BB40C5 /* SourceFullScreenOverView.m in Sources */,
 				BEC155FD1FD7667500FE37FE /* AppDelegate.m in Sources */,
 				BEC155FA1FD7667500FE37FE /* main.m in Sources */,
 			);

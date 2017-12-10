@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WindowMainView : UIView
-
+@property(nonatomic, strong) UIWindow *coverWindow;
 @end

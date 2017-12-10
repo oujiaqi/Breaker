@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WindowFullScreenOverView : UIWindow
+@protocol AlertWindowDelegate<NSObject>
+- (void)releaseWindow:(id)sender;
+@end
 
+@interface WindowFullScreenOverView : UIWindow
+@property (assign, nonatomic)id<AlertWindowDelegate> alertWindowDelegate;
+- (void)setDelegate:(id)alertWindowDelegate;
 @end

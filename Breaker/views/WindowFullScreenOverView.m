@@ -23,9 +23,9 @@
         UIButton *myBtn = [[UIButton alloc] initWithFrame:CGRectMake(150, 550, 100, 30)];
         [myBtn setTitle:@"关闭" forState:UIControlStateNormal];
         //        [myBtn setTitle:@"已经弹出" forState:UIControlStateHighlighted];
-        [myBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [myBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         //        [myBtn setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
-        [myBtn setBackgroundColor:[UIColor grayColor]];
+        [myBtn setBackgroundColor:[UIColor blueColor]];
         [myBtn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:myBtn];
@@ -39,9 +39,16 @@
     return self;
 }
 
-- (void)click {
-    [self removeFromSuperview];
+- (void)setDelegate:(id)alertWindowDelegate {
+    self.alertWindowDelegate = alertWindowDelegate;
 }
+
+- (void)click {
+    [self resignKeyWindow];
+    [self setHidden:YES];
+    [self.alertWindowDelegate releaseWindow:nil];
+}
+
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];

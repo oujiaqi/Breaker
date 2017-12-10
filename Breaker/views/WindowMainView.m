@@ -9,6 +9,11 @@
 #import "WindowMainView.h"
 #import "WindowFullScreenOverView.h"
 
+@interface WindowMainView () <AlertWindowDelegate>
+
+@end
+
+
 @implementation WindowMainView
 
 /*
@@ -45,6 +50,11 @@
     return self;
 }
 
+- (void)releaseWindow:(id)sender {
+    NSLog(@"销毁 window");
+    self.coverWindow = nil;
+}
+
 - (void)click {
     [self performSelector:@selector(show) withObject:nil afterDelay:5.0f];
 //    CGRect screenRect = [UIScreen mainScreen].bounds;
@@ -66,47 +76,13 @@
 }
 
 - (void)show {
-//    CGRect screenRect = [UIScreen mainScreen].bounds;
-//    WindowFullScreenOverView *wsov = [[WindowFullScreenOverView alloc] initWithFrame:screenRect];
-//    wsov.windowLevel = UIWindowLevelAlert+1;
-//    
-//    [wsov makeKeyAndVisible];
-    // 1、初始化
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示"
-                                                                             message:@"输入您要添加的用户名"
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    // 2、添加文本输入框
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        // 此处设置文本输入框常用属性配置
-    }];
-    
-    // 3、添加取消按钮
-    [alertController addAction:[UIAlertAction actionWithTitle:@"取消"
-                                                        style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action) {
-                                                          // 此处处理点击取消按钮逻辑
-                                                      }]];
-    
-    
-    // 4、添加确定按钮
-    [alertController addAction:[UIAlertAction actionWithTitle:@"确定"
-                                                        style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action) {
-                                                          // 此处处理点击确定按钮逻辑
-                                                          
-                                                          // 根据下标（文本输入框下标从0开始，根据添加先后顺序计算）获取文本输入框
-                                                          UITextField *textField = alertController.textFields[0];
-                                                          
-                                                          // 获取文本输入框上的文本
-                                                          NSString *text = textField.text;
-                                                          
-                                                          // 接着其他处理逻辑...
-                                                      }]];
-    
-    // 5、模态切换显示弹出框
-//    [self.view presentViewController:alertController
-//                       animated:YES
-//                     completion:nil];
+    NSLog(@"NewWindow");
+    WindowFullScreenOverView *temp = [[WindowFullScreenOverView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [temp setDelegate:self];
+    temp.windowLevel = UIWindowLevelAlert+1;
+    temp.hidden = NO;
+    [temp makeKeyWindow];
+    self.coverWindow = temp;
 }
 
 - (void)drawRect:(CGRect)rect {
